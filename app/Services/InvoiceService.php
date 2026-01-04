@@ -89,7 +89,7 @@ class InvoiceService
     }
     public function getAllProducts()
     {
-        return \App\Models\Product::select('id', 'name', 'price')->get();
+        return \App\Models\Product::select('id', 'name', 'price' ,'stock_quantity')->where('stock_quantity' , '>', 0)->get();
     }
 
     public function generateNextInvoiceNumber(): string

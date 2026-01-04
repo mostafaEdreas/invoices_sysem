@@ -26,7 +26,7 @@ class RolePermissionSeeder extends Seeder
     private   $roles_has_permissions = [
             'admin' => [
                 'products'    => 'c,v,u,d,p,va,r',
-                'invoices'    => 'v,va,r',
+                'invoices'    => 'v,va,r,p',
                 'customers'   => 'c,v,u,d,p,va,r',
                 'roles'       => 'c,v,u,d,va,r',
                 'permissions' => 'c,v,u,d,va,r',

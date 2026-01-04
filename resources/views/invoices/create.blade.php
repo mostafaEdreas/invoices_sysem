@@ -82,7 +82,7 @@
                                                 <option value="0" data-price="0">Select Product</option>
                                                 @foreach ($products as $product)
                                                     <option value="{{ $product->id }}" data-price="{{ $product->price }}">
-                                                        {{ $product->name }} (${{ number_format($product->price, 2) }})
+                                                        {{ $product->name }}- ${{ number_format($product->price, 2) }} (Q {{ $product->stock_quantity }})
                                                     </option>
                                                 @endforeach
                                             </select>
@@ -119,7 +119,7 @@
                         </div>
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <span class="text-muted">Discount (%)</span>
-                            <input type="number" name="discount_rate" class="form-control form-control-sm w-25 text-end" 
+                            <input type="number" name="discount" class="form-control form-control-sm w-25 text-end" 
                                 value="0" min="0" max="100" oninput="calculateInvoiceTotal()">
                         </div>
                         <hr>
@@ -167,7 +167,7 @@
                         <option value="0" data-price="0">Select Product</option>
                         @foreach ($products as $product)
                             <option value="{{ $product->id }}" data-price="{{ $product->price }}">
-                                {{ $product->name }} (${{ number_format($product->price, 2) }})
+                                {{ $product->name }} ${{ number_format($product->price, 2) }} (Q {{ $product->stock_quantity }})
                             </option>
                         @endforeach
                     </select>
